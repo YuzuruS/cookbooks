@@ -15,6 +15,7 @@ bash "install_mysql" do
   cwd "/tmp"
   code <<-EOH
     tar xf "#{node['mysql']['file_name']}"
+    rm "#{node['mysql']['file_name']}"
   EOH
 end
 
