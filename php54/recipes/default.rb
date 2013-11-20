@@ -6,7 +6,7 @@
 #
 # All rights reserved - Do Not Redistribute
 #
-%w(php54 php54-mbstring php54-pecl-xdebug php54-curl php54-mcrypt php54-mysql php54-devel php54-cli php54-common php54-xml).each do |package|
+%w(php54 php54-gd php54-mbstring php54-pecl-xdebug php54-curl php54-mcrypt php54-mysql php54-devel php54-cli php54-common php54-xml).each do |package|
   yum_package package do
     action :install
   end
