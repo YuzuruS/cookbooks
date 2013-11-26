@@ -26,3 +26,68 @@ node['mysql']['rpm'].each do |rpm|
     source "/tmp/#{rpm[:rpm_file]}"
   end
 end
+
+template "/usr/my.cnf" do
+  user 'root'
+  group 'root'
+  mode 644
+  source 'my.cnf.erb'
+
+  variables ({
+    :server_charset                  => node['mysql']['server_charset'],
+    :max_connections                 => node['mysql']['max_connections'],
+    :query_cache_size                => node['mysql']['query_cache_size'],
+    :table_cache_size                => node['mysql']['table_cache_size'],
+    :thread_cache_size               => node['mysql']['thread_cache_size'],
+    :join_buffer_size                => node['mysql']['join_buffer_size'],
+    :sort_buffer_size                => node['mysql']['sort_buffer_size'],
+    :read_rnd_buffer_size            => node['mysql']['read_rnd_buffer_size'],
+    :innodb_file_per_table           => node['mysql']['innodb_file_per_table'],
+    :innodb_data_file_path           => node['mysql']['innodb_data_file_path'],
+    :innodb_autoextend_increment     => node['mysql']['innodb_autoextend_increment'],
+    :innodb_buffer_pool_size         => node['mysql']['innodb_buffer_pool_size'],
+    :innodb_additional_mem_pool_size => node['mysql']['innodb_additional_mem_pool_size'],
+    :innodb_write_io_threads         => node['mysql']['innodb_write_io_threads'],
+    :innodb_read_io_threads          => node['mysql']['innodb_read_io_threads'],
+    :innodb_log_buffer_size          => node['mysql']['innodb_log_buffer_size'],
+    :innodb_log_file_size            => node['mysql']['innodb_log_file_size'],
+    :innodb_flush_log_at_trx_commit  => node['mysql']['innodb_flush_log_at_trx_commit']
+  })
+end
+
+package 'expect' do
+  only_if 'ls /root/.mysql_secret'
+  :install
+end
+
+cookbook_file '/tmp/password_set' do
+  only_if 'ls /root/.mysql_secret'
+  source "#{version}/password_set"
+end
+
+execute 'password_set' do
+  only_if 'ls /root/.mysql_secret'
+  user 'root'
+  command 'chmod +x /tmp/password_set && /tmp/password_set && rm -f /tmp/password_set'
+end
+
+package 'expect' do
+  :remove
+end
+
+#execute "mysql-create-user" do
+#    command "/usr/bin/mysql -u root --password=\"#{node['example']['db']['rootpass']}\"  < /tmp/grants.sql"
+#    action :nothing
+#end
+ 
+#template "/tmp/grants.sql" do
+#    owner "root"
+#    group "root"
+#    mode "0600"
+#    variables(
+#        :user     => node['example']['db']['user'],
+#        :password => node['example']['db']['pass'],
+#        :database => node['example']['db']['database']
+#    )
+#    notifies :run, "execute[mysql-create-user]", :immediately
+#end

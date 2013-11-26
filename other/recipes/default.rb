@@ -6,7 +6,7 @@
 #
 # All rights reserved - Do Not Redistribute
 #
-%w{vim-enhanced git}.each do |p| # <- 1
+%w{vim-enhanced git sl}.each do |p| # <- 1
   package p do
     action :install
   end
