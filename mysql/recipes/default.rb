@@ -78,20 +78,3 @@ end
 package 'expect' do
   :remove
 end
-
-#execute "mysql-create-user" do
-#    command "/usr/bin/mysql -u root --password=\"#{node['example']['db']['rootpass']}\"  < /tmp/grants.sql"
-#    action :nothing
-#end
- 
-#template "/tmp/grants.sql" do
-#    owner "root"
-#    group "root"
-#    mode "0600"
-#    variables(
-#        :user     => node['example']['db']['user'],
-#        :password => node['example']['db']['pass'],
-#        :database => node['example']['db']['database']
-#    )
-#    notifies :run, "execute[mysql-create-user]", :immediately
-#end
