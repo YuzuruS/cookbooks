@@ -21,8 +21,3 @@ end
 service "httpd" do # <- 2
   action [:start, :enable]
 end
-
-execute "synb-ln" do
-  command "ln -s /vagrant/schoolwith_v2 /var/www/html"
-  not_if { ::File.exists?("/var/www/html/schoolwith_v2")}
-end
