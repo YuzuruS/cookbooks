@@ -1,6 +1,6 @@
 name             'php54'
-maintainer       'YOUR_COMPANY_NAME'
-maintainer_email 'YOUR_EMAIL'
+maintainer       'yudsuzuk'
+maintainer_email 'navitima@gmail.com'
 license          'All rights reserved'
 description      'Installs/Configures php54'
 long_description IO.read(File.join(File.dirname(__FILE__), 'README.md'))

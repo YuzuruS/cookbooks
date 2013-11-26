@@ -55,20 +55,24 @@ template "/usr/my.cnf" do
   })
 end
 
+service 'mysql' do
+  action [ :enable, :restart ]
+end
+
 package 'expect' do
   only_if 'ls /root/.mysql_secret'
   :install
 end
 
-cookbook_file '/tmp/password_set' do
+cookbook_file '/tmp/password_set.sh' do
   only_if 'ls /root/.mysql_secret'
-  source "#{version}/password_set"
+  source "password_set.sh"
 end
 
-execute 'password_set' do
+execute 'password_set.sh' do
   only_if 'ls /root/.mysql_secret'
   user 'root'
-  command 'chmod +x /tmp/password_set && /tmp/password_set && rm -f /tmp/password_set'
+  command 'chmod +x /tmp/password_set.sh && ./tmp/password_set.sh && rm -f /tmp/password_set.sh'
 end
 
 package 'expect' do

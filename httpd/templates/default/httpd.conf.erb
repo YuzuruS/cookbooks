@@ -399,7 +399,7 @@ DocumentRoot "/var/www/html"
 # negotiated documents.  The MultiViews Option can be used for the 
 # same purpose, but it is much slower.
 #
-DirectoryIndex index.html index.html.var
+DirectoryIndex index.html index.html.var index.php 
 
 #
 # AccessFileName: The name of the file to look for in each directory
@@ -1004,9 +1004,9 @@ NameVirtualHost *:80
 
 <VirtualHost *:80>
 DocumentRoot /var/www/html/schoolwith_v2
-ServerName vagrant.sw-dev.com
+ServerName chef.sw-dev.com
 </VirtualHost>
 <VirtualHost *:80>
 DocumentRoot /var/www/html/phpmyadmin
-ServerName vagrant.phpmyadmin.com
+ServerName chef.phpmyadmin.com
 </VirtualHost>

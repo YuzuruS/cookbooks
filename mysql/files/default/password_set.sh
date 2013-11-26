@@ -1,6 +1,5 @@
 #!/bin/bash
-
-PASS=`cat /root/.mysql_secret | sed -e "s/# The random password set for the root user at [a-zA-Z]\+ [a-zA-Z]\+  [0-9]\+ [0-9]\{2\}:[0-9]\{2\}:[0-9]\{2\} [0-9]\{4\} (local time): //"`
+PASS=`head -n 1 /root/.mysql_secret |awk '{print $(NF - 0)}'`
 expect -c "
   spawn mysql -p
     expect \"Enter Password:\"
@@ -11,6 +10,6 @@ expect -c "
     send \"exit\n\"
   interact
 "
-rm -f .mysql_secret
+rm -f /root/.mysql_secret
 
 exit 0
