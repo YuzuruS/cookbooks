@@ -27,6 +27,11 @@ node['mysql']['rpm'].each do |rpm|
   end
 end
 
+chef_gem "mysql" do
+  action :nothing
+  subscribes :install, "package[MySQL-devel]", :immediately
+end
+
 template "/usr/my.cnf" do
   user 'root'
   group 'root'
