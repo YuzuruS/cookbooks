@@ -10,4 +10,4 @@ ehthumbs.db
 Thumbs.db
 /.vagrant
 /private
-/new_relic/attribute/default.rb
+/new_relic/attributes/default.rb
