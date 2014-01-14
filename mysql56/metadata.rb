@@ -1,4 +1,4 @@
-name             'mysql'
+name             'mysql56'
 maintainer       'yudsuzuk'
 maintainer_email 'navitima@gmail.com'
 license          'All rights reserved'
