@@ -59,3 +59,8 @@ template "/usr/my.cnf" do
     :innodb_flush_log_at_trx_commit  => node['mysql']['innodb_flush_log_at_trx_commit']
   })
 end
+
+service "mysql" do
+  supports :status => true, :restart => true
+  action [:restart, :enable]
+end
