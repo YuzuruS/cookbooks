@@ -19,5 +19,6 @@ template "httpd.conf" do
 end
 
 service "httpd" do # <- 2
-  action [:start, :enable]
+    supports :restart=>true, :reload=>false, :status=>true
+    action [:restart, :enable]
 end
