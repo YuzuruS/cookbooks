@@ -1,4 +1,4 @@
-private Cookbook
+oh-my-zsh Cookbook
 ================
 TODO: Enter the cookbook description here.
 
@@ -11,14 +11,14 @@ TODO: List your cookbook requirements. Be sure to include any requirements this 
 
 e.g.
 #### packages
-- `toaster` - private needs toaster to brown your bagel.
+- `toaster` - oh-my-zsh needs toaster to brown your bagel.
 
 Attributes
 ----------
 TODO: List you cookbook attributes here.
 
 e.g.
-#### private::default
+#### oh-my-zsh::default
 <table>
   <tr>
     <th>Key</th>
@@ -27,7 +27,7 @@ e.g.
     <th>Default</th>
   </tr>
   <tr>
-    <td><tt>['private']['bacon']</tt></td>
+    <td><tt>['oh-my-zsh']['bacon']</tt></td>
     <td>Boolean</td>
     <td>whether to include bacon</td>
     <td><tt>true</tt></td>
@@ -36,24 +36,24 @@ e.g.
 
 Usage
 -----
-#### private::default
+#### oh-my-zsh::default
 TODO: Write usage instructions for each cookbook.
 
 e.g.
-Just include `private` in your node's `run_list`:
+Just include `oh-my-zsh` in your node's `run_list`:
 
 ```json
 {
   "name":"my_node",
   "run_list": [
-    "recipe[private]"
+    "recipe[oh-my-zsh]"
   ]
 }
 ```
 
 Contributing
 ------------
-TODO: (optional) If this is a public cookbook, detail the process for contributing. If this is a private cookbook, remove this section.
+TODO: (optional) If this is a public cookbook, detail the process for contributing. If this is a oh-my-zsh cookbook, remove this section.
 
 e.g.
 1. Fork the repository on Github
