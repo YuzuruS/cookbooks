@@ -1,5 +1,5 @@
-other Cookbook
-==============
+server_setting Cookbook
+=======================
 TODO: Enter the cookbook description here.
 
 e.g.
@@ -11,14 +11,14 @@ TODO: List your cookbook requirements. Be sure to include any requirements this 
 
 e.g.
 #### packages
-- `toaster` - other needs toaster to brown your bagel.
+- `toaster` - server_setting needs toaster to brown your bagel.
 
 Attributes
 ----------
 TODO: List you cookbook attributes here.
 
 e.g.
-#### other::default
+#### server_setting::default
 <table>
   <tr>
     <th>Key</th>
@@ -27,7 +27,7 @@ e.g.
     <th>Default</th>
   </tr>
   <tr>
-    <td><tt>['other']['bacon']</tt></td>
+    <td><tt>['server_setting']['bacon']</tt></td>
     <td>Boolean</td>
     <td>whether to include bacon</td>
     <td><tt>true</tt></td>
@@ -36,17 +36,17 @@ e.g.
 
 Usage
 -----
-#### other::default
+#### server_setting::default
 TODO: Write usage instructions for each cookbook.
 
 e.g.
-Just include `other` in your node's `run_list`:
+Just include `server_setting` in your node's `run_list`:
 
 ```json
 {
   "name":"my_node",
   "run_list": [
-    "recipe[other]"
+    "recipe[server_setting]"
   ]
 }
 ```

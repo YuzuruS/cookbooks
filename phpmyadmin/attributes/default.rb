@@ -1,0 +1,1 @@
+default['phpmyadmin']['domain'] = 'phpmyadmin.com'
