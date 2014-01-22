@@ -1,0 +1,23 @@
+<source>
+  type tail
+  format apache
+  path /var/log/httpd/access_log
+  tag apache.access
+</source>
+
+<match apache.access>
+  type file
+  path /var/log/td-agent/access_log
+</match>
+
+<source>
+  type tail
+  format apache
+  path /var/log/httpd/error_log
+  tag apache.error
+</source>
+
+<match apache.error>
+  type file
+  path /var/log/td-agent/error_log
+</match>
