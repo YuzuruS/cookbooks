@@ -14,7 +14,7 @@ bash 'install_and_activate_newrelic' do
     sudo nrsysmond-config --set license_key=#{node[:newrelic_license_key]}
     sudo /etc/init.d/newrelic-sysmond start
     sudo /sbin/chkconfig newrelic-sysmond on
-    sudo sed -ie "s/REPLACE_WITH_REAL_KEY/#{node[:newrelic_license_key]}/g" /etc/php.d/ newrelic.ini
+    sudo sed -ie "s/REPLACE_WITH_REAL_KEY/#{node[:newrelic_license_key]}/g" /etc/php.d/newrelic.ini
     sudo /etc/init.d/httpd graceful
   EOC
 end
