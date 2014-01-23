@@ -6,7 +6,7 @@
 #
 # All rights reserved - Do Not Redistribute
 #
-%w{vim-enhanced git sl zsh}.each do |p| # <- 1
+%w{vim-enhanced git sl zsh dstat sysstat}.each do |p| # <- 1
   package p do
     action :install
   end
