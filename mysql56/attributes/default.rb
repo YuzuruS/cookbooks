@@ -1,7 +1,7 @@
-versions = "5.6.14-1.el6.x86_64"
+versions = "5.6.16-1.el6.x86_64"
 default['mysql']['versions']   = versions
 default['mysql']['file_name']  = "MySQL-#{versions}.rpm-bundle.tar"
-default['mysql']['remote_uri'] = "http://ftp.jaist.ac.jp/pub/mysql/Downloads/MySQL-5.6/MySQL-#{versions}.rpm-bundle.tar"
+default['mysql']['file_checksum']  = "a9885eaea2c8c4494976e0e7d6c3b4d6ae384ba4fb1392514a36e2f961a5d154"
 default['mysql']['rpm'] = [
   {
     :rpm_file     => "MySQL-shared-compat-#{versions}.rpm",

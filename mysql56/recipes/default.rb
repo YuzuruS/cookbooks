@@ -6,8 +6,15 @@
 #
 # All rights reserved - Do Not Redistribute
 #
-remote_file "/tmp/#{node['mysql']['file_name']}" do
-  source "#{node['mysql']['remote_uri']}"
+%w{libaio libaio-devel}.each do |p| # <- 1
+  package p do
+    action :install
+  end
+end
+
+cookbook_file "/tmp/#{node['mysql']['file_name']}" do
+  source "#{node['mysql']['file_name']}"
+  checksum "#{node['mysql']['file_checksum']}"
 end
 
 bash "install_mysql" do
