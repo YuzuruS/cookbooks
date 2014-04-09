@@ -1,3 +1,18 @@
+[client]
+default-character-set=<%= @server_charset %>
+
+[mysqld]
+skip-character-set-client-handshake
+character-set-server = <%= @server_charset %>
+collation-server = <%= @collation_server %>
+init-connect = SET NAMES <%= @server_charset %>
+
+[mysqldump]
+default-character-set=<%= @server_charset %>
+
+[mysql]
+default-character-set=<%= @server_charset %>
+
 [mysqld_safe]
 user=mysql
 datadir=/var/lib/mysql

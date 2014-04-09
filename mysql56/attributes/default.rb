@@ -26,6 +26,7 @@ default['mysql']['rpm'] = [
 ]
 
 default['mysql']['server_charset']                  = 'utf8'
+default['mysql']['collation-server']                = 'utf8_general_ci'
 default['mysql']['max_connections']                 = 128
 default['mysql']['query_cache_size']                = 0
 default['mysql']['table_cache_size']                = 1024

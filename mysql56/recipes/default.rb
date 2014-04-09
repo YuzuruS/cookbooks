@@ -47,6 +47,7 @@ template "/usr/my.cnf" do
 
   variables ({
     :server_charset                  => node['mysql']['server_charset'],
+    :collation_server                => node['mysql']['collation-server'],
     :max_connections                 => node['mysql']['max_connections'],
     :query_cache_size                => node['mysql']['query_cache_size'],
     :table_cache_size                => node['mysql']['table_cache_size'],
