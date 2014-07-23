@@ -41,7 +41,7 @@
 # Don't give away too much information about all the subcomponents
 # we are running.  Comment out this line if you don't mind remote sites
 # finding out what major optional modules you are running
-ServerTokens OS
+ServerTokens Prod 
 
 #
 # ServerRoot: The top of the directory tree under which the server's
@@ -73,7 +73,7 @@ Timeout 60
 # KeepAlive: Whether or not to allow persistent connections (more than
 # one request per connection). Set to "Off" to deactivate.
 #
-KeepAlive Off
+KeepAlive On
 
 #
 # MaxKeepAliveRequests: The maximum number of requests to allow
@@ -463,7 +463,7 @@ HostnameLookups Off
 # filesystem) can improve performance; for details, please see
 # http://httpd.apache.org/docs/2.2/mod/core.html#enablemmap
 #
-#EnableMMAP off
+EnableMMAP off
 
 #
 # EnableSendfile: Control whether the sendfile kernel support is
@@ -472,7 +472,7 @@ HostnameLookups Off
 # filesystems.  Please see
 # http://httpd.apache.org/docs/2.2/mod/core.html#enablesendfile
 #
-#EnableSendfile off
+EnableSendfile off
 
 #
 # ErrorLog: The location of the error log file.
@@ -533,7 +533,7 @@ CustomLog logs/access_log combined
 # Set to "EMail" to also include a mailto: link to the ServerAdmin.
 # Set to one of:  On | Off | EMail
 #
-ServerSignature On
+ServerSignature Off
 
 #
 # Aliases: Add here as many aliases as you need (with no limit). The format is
